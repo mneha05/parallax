@@ -1,6 +1,7 @@
 # PARALLAX
 
 **Multi-agent reliability investigation platform.** A director agent orchestrates a small team of specialist subagents (Statistician, Reliability Engineer, Pattern Detective) — each with access to a curated set of analytical *skills* (real statistical functions). Investigations stream live to the UI, event by event. The final output is a stakeholder-facing brief: headline, evidence, recommendations, caveats.
+**Live demo:** [parallax-pi-one.vercel.app](https://parallax-pi-one.vercel.app/)
 
 ```
     user question
