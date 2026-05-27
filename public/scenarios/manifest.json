@@ -1,0 +1,35 @@
+[
+  {
+    "id": "lot-divergence",
+    "title": "Lot Divergence — Leakage Current Drift",
+    "component": "ECC-7 capacitor (qualification build)",
+    "description": "Five production lots (A–E), 80 units per lot, leakage current measured every 3 months over a 24-month accelerated aging campaign. A reliability engineer suspects one lot may be drifting faster than the others but the visual difference is subtle and could be sampling noise.",
+    "suggested_questions": [
+      "Is any lot aging faster than the others?",
+      "How confident can we be that the difference is real, not noise?",
+      "If Lot C continues at its current trajectory, when does it exceed the 4.0 μA spec limit?"
+    ]
+  },
+  {
+    "id": "capacitor-aging",
+    "title": "Component Surveillance — Remaining Life Projection",
+    "component": "X7R ceramic capacitor, deployed fleet",
+    "description": "Surveillance program tracked 600 fielded units over 96 months (8 years). Failures recorded with time-to-failure; surviving units are right-censored at study end. Program manager needs a defensible remaining-life projection for budgeting the next replacement cycle.",
+    "suggested_questions": [
+      "What's the projected reliability at 10, 15, and 20 years?",
+      "When does cumulative failure probability cross 25%?",
+      "Is the failure mode consistent with normal wear-out or with infant mortality?"
+    ]
+  },
+  {
+    "id": "field-returns",
+    "title": "Field-Return Rate — Process Change Investigation",
+    "component": "Power module, field-deployed",
+    "description": "Monthly field-return counts over 60 months. A supplier reported a process modification roughly 2-3 years ago but the exact date is missing from records. Quality team needs to identify when (and whether) the modification affected return rate.",
+    "suggested_questions": [
+      "When did the return rate change, and by how much?",
+      "How confident is the change-point estimate?",
+      "Was the change gradual or step?"
+    ]
+  }
+]

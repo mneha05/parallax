@@ -1,0 +1,176 @@
+@import url("https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&family=IBM+Plex+Sans:wght@400;500;600;700&family=IBM+Plex+Serif:ital,wght@0,400;0,500;0,600;1,400&display=swap");
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --font-sans: "IBM Plex Sans", system-ui, sans-serif;
+  --font-serif: "IBM Plex Serif", Georgia, serif;
+  --font-mono: "IBM Plex Mono", ui-monospace, monospace;
+
+  /* Paper/ink editorial palette */
+  --paper:      #FAF8F2;
+  --surface:    #FFFFFF;
+  --ink:        #1A1A1A;
+  --slate:      #4A4F58;
+  --mute:       #8B8F96;
+  --rule:       #E5E0D5;
+  --rule-2:     #C9C3B5;
+
+  /* Singular accent */
+  --vermilion:  #C73E1D;
+  --vermilion-soft: rgba(199, 62, 29, 0.08);
+
+  /* Agent identity colors */
+  --director:     #2C2C2C;
+  --statistician: #3B4F8C;
+  --reliability:  #A06A1F;
+  --pattern:      #4A6B3A;
+  --synthesis:    #C73E1D;
+}
+
+html, body {
+  background: var(--paper);
+  color: var(--ink);
+  font-family: var(--font-sans);
+  font-feature-settings: "ss01" 1, "tnum" 1, "kern" 1;
+  -webkit-font-smoothing: antialiased;
+}
+
+.tnum { font-variant-numeric: tabular-nums; }
+
+/* Editorial label — small caps, tracking */
+.eyebrow {
+  font-family: var(--font-mono);
+  font-size: 10.5px;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--mute);
+}
+.eyebrow-ink { color: var(--ink); }
+
+.hairline { border-color: var(--rule); }
+.hairline-2 { border-color: var(--rule-2); }
+
+/* Headline — serif with optical adjustments */
+.display {
+  font-family: var(--font-serif);
+  font-weight: 500;
+  letter-spacing: -0.01em;
+  line-height: 1.15;
+}
+
+.lede {
+  font-family: var(--font-serif);
+  font-style: italic;
+  font-weight: 400;
+  color: var(--slate);
+  line-height: 1.5;
+}
+
+/* Drop cap */
+.dropcap::first-letter {
+  font-family: var(--font-serif);
+  font-weight: 500;
+  font-size: 3.2em;
+  float: left;
+  line-height: 0.86;
+  margin: 0.05em 0.06em 0 0;
+  color: var(--vermilion);
+}
+
+/* Subtle paper texture */
+body {
+  background-image:
+    radial-gradient(circle at 1px 1px, rgba(0,0,0,0.022) 1px, transparent 0);
+  background-size: 4px 4px;
+}
+
+/* Scrollbar */
+*::-webkit-scrollbar { width: 9px; height: 9px; }
+*::-webkit-scrollbar-track { background: transparent; }
+*::-webkit-scrollbar-thumb { background: var(--rule-2); border: 2px solid var(--paper); }
+*::-webkit-scrollbar-thumb:hover { background: var(--slate); }
+
+:focus-visible { outline: 1.5px solid var(--vermilion); outline-offset: 2px; }
+
+/* Marker for agents currently running */
+@keyframes work {
+  0%, 100% { opacity: 0.3; }
+  50%      { opacity: 1.0; }
+}
+.working { animation: work 1.2s ease-in-out infinite; }
+
+@keyframes cursor {
+  0%, 49% { opacity: 1; }
+  50%, 100% { opacity: 0; }
+}
+.caret::after {
+  content: "▍";
+  margin-left: 1px;
+  animation: cursor 1s steps(1) infinite;
+  color: var(--vermilion);
+}
+
+/* Agent dot */
+.dot-agent {
+  display: inline-block;
+  width: 8px; height: 8px;
+  border-radius: 999px;
+  vertical-align: baseline;
+  margin-right: 8px;
+  transform: translateY(-1px);
+}
+
+/* Pull-quote / tag */
+.tag {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 1px 7px;
+  border: 1px solid var(--rule-2);
+  background: var(--surface);
+  font-family: var(--font-mono);
+  font-size: 10.5px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--slate);
+}
+.tag-hot { color: var(--vermilion); border-color: rgba(199,62,29,0.4); background: var(--vermilion-soft); }
+
+/* Number / metric */
+.metric-num {
+  font-family: var(--font-serif);
+  font-weight: 500;
+  font-size: 28px;
+  line-height: 1;
+  letter-spacing: -0.02em;
+  font-variant-numeric: tabular-nums;
+}
+
+/* Small tick row */
+.tick-row {
+  display: flex;
+  align-items: baseline;
+  gap: 6px;
+  font-family: var(--font-mono);
+  font-size: 11px;
+  color: var(--slate);
+}
+
+/* Code-like inline snippet */
+.snippet {
+  font-family: var(--font-mono);
+  font-size: 11.5px;
+  padding: 1px 5px;
+  background: rgba(0,0,0,0.04);
+  border: 1px solid var(--rule);
+  color: var(--ink);
+}
+
+/* Frame: paper card */
+.card {
+  background: var(--surface);
+  border: 1px solid var(--rule);
+}
